@@ -4,7 +4,6 @@ using Sample.Rest.Api.Domain;
 using Sample.Rest.Api.Models;
 using Sample.Rest.Api.Repositories;
 using System;
-using System.Collections.Generic;
 
 namespace Sample.Rest.Api.Controllers
 {
@@ -18,6 +17,8 @@ namespace Sample.Rest.Api.Controllers
         {
             _repository = repository;
         }
+
+        // Find Companies
 
         [HttpGet, HttpHead]
         public IActionResult FindCompanies([FromQuery] CompanyParameters parameters)
@@ -41,6 +42,8 @@ namespace Sample.Rest.Api.Controllers
 
             return Ok(items);
         }
+
+        // Create Company
 
         [HttpPost]
         public IActionResult CreateCompany(CreateCompany request)
@@ -78,6 +81,8 @@ namespace Sample.Rest.Api.Controllers
             return Created($"companies/{details.Id}", details);
         }
 
+        // Get Company
+
         [HttpGet("{companyId}")]
         public IActionResult GetCompany(Guid companyId)
         {
@@ -107,8 +112,10 @@ namespace Sample.Rest.Api.Controllers
             return Ok(details);
         }
 
+        // Update Company
+
         [HttpPut("{companyId}")]
-        public IActionResult GetCompany(Guid companyId, UpdateCompany request)
+        public IActionResult UpdateCompany(Guid companyId, UpdateCompany request)
         {
             // Find company by ID
 
@@ -121,6 +128,18 @@ namespace Sample.Rest.Api.Controllers
                 return NotFound(new { Code = "Company", Description = "Company not found" });
             }
 
+            // Validate and return Unprocessable Entity (422) if errors are found
+
+            if (string.IsNullOrWhiteSpace(request.Name))
+            {
+                return UnprocessableEntity(new { Code = "Name", Description = "Name is required" });
+            }
+
+            if (_repository.AnyByName(request.Name, company.Id))
+            {
+                return UnprocessableEntity(new { Code = "Name", Description = $"Company with name '{request.Name}' already exists" });
+            }
+
             // Update company
 
             company.Update(request.Name);
@@ -129,6 +148,98 @@ namespace Sample.Rest.Api.Controllers
 
             return NoContent();
         }
+
+        // Active Company
+
+        [HttpPatch("{companyId}/activated")]
+        public IActionResult ActiveCompany(Guid companyId)
+        {
+            // Find company by ID
+
+            var company = _repository.GetById(companyId);
+
+            // If company not found return Not Found (404) with some message to help
+
+            if (company is null)
+            {
+                return NotFound(new { Code = "Company", Description = "Company not found" });
+            }
+
+            if (company.Status == CompanyStatus.Activated)
+            {
+                return UnprocessableEntity(new { Code = "Company", Description = "Company is already activated" });
+            }
+
+            // Update company
+
+            company.Active();
+
+            // Return success with no resource needed (204)
+
+            return NoContent();
+        }
+
+        // Inactive Company
+
+        [HttpPatch("{companyId}/inactivated")]
+        public IActionResult InactiveCompany(Guid companyId)
+        {
+            // Find company by ID
+
+            var company = _repository.GetById(companyId);
+
+            // If company not found return Not Found (404) with some message to help
+
+            if (company is null)
+            {
+                return NotFound(new { Code = "Company", Description = "Company not found" });
+            }
+
+            if (company.Status == CompanyStatus.Inactivated)
+            {
+                return UnprocessableEntity(new { Code = "Company", Description = "Company is already inactivated" });
+            }
+
+            // Update company
+
+            company.Inactive();
+
+            // Return success with no resource needed (204)
+
+            return NoContent();
+        }
+
+        // Block Company
+
+        [HttpPatch("{companyId}/blocked")]
+        public IActionResult BlockCompany(Guid companyId)
+        {
+            // Find company by ID
+
+            var company = _repository.GetById(companyId);
+
+            // If company not found return Not Found (404) with some message to help
+
+            if (company is null)
+            {
+                return NotFound(new { Code = "Company", Description = "Company not found" });
+            }
+
+            if (company.Status == CompanyStatus.Blocked)
+            {
+                return UnprocessableEntity(new { Code = "Company", Description = "Company is already blocked" });
+            }
+
+            // Update company
+
+            company.Block();
+
+            // Return success with no resource needed (204)
+
+            return NoContent();
+        }
+
+        // Remove Company
 
         [HttpDelete("{companyId}")]
         public IActionResult RemoveCompany(Guid companyId)

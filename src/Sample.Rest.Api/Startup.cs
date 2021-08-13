@@ -33,7 +33,7 @@ namespace Sample.Rest.Api
             });
 
             services.AddSingleton<CompanyRepository>();
-            services.AddSingleton<CompanyEmployeeRepository>();
+            services.AddSingleton<EmployeeRepository>();
         }
 
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)

@@ -9,7 +9,7 @@ namespace Sample.Rest.Api.Domain
             Id = id ?? Guid.NewGuid();
             Name = name;
             CreatedAt = createdAt;
-            Status = CompanyStatus.Inactive;
+            Status = CompanyStatus.Inactivated;
         }
 
         public Guid Id { get; private set; }
@@ -22,15 +22,15 @@ namespace Sample.Rest.Api.Domain
             Name = name;
         }
 
-        public void Active() => Status = CompanyStatus.Active;
-        public void Inactive() => Status = CompanyStatus.Inactive;
+        public void Active() => Status = CompanyStatus.Activated;
+        public void Inactive() => Status = CompanyStatus.Inactivated;
         public void Block() => Status = CompanyStatus.Blocked;
     }
 
     public enum CompanyStatus : short
     {
-        Active = 1,
-        Inactive = 2,
+        Activated = 1,
+        Inactivated = 2,
         Blocked = 3
     }
 }

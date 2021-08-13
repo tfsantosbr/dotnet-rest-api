@@ -43,16 +43,21 @@ namespace Sample.Rest.Api.Repositories
             _companies.Add(company);
         }
 
-        public bool AnyByName(string name)
+        public bool AnyByName(string name, Guid? ignoredCompanyId = null)
         {
-            return _companies.Any(c => c.Name == name);
+            return _companies.Any(c => c.Name == name && c.Id != ignoredCompanyId);
+        }
+
+        public bool AnyById(Guid companyId)
+        {
+            return _companies.Any(c => c.Id == companyId);
         }
 
         public Company GetById(Guid companyId)
         {
             return _companies.FirstOrDefault(c => c.Id == companyId);
         }
-        
+
         public void Remove(Company company)
         {
             _companies.Remove(company);
