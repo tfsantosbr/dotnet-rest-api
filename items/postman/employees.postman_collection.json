@@ -1,0 +1,572 @@
+{
+	"info": {
+		"_postman_id": "14a86eb6-6e04-4db8-bf8b-afe4c4dd3d93",
+		"name": "Employees",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Find Employess (All Employees)",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{host}}/companies/0527a3a6-2cd3-4b43-8359-91783d061f1b/employees",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"companies",
+						"0527a3a6-2cd3-4b43-8359-91783d061f1b",
+						"employees"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Find Employess (Filtered By Name)",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{host}}/companies/0527a3a6-2cd3-4b43-8359-91783d061f1b/employees?name=dani",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"companies",
+						"0527a3a6-2cd3-4b43-8359-91783d061f1b",
+						"employees"
+					],
+					"query": [
+						{
+							"key": "name",
+							"value": "dani"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Find Employess (Filtered By Creation Date)",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{host}}/companies/0527a3a6-2cd3-4b43-8359-91783d061f1b/employees?hiredIn=2020-01-08",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"companies",
+						"0527a3a6-2cd3-4b43-8359-91783d061f1b",
+						"employees"
+					],
+					"query": [
+						{
+							"key": "hiredIn",
+							"value": "2020-01-08"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Find Employess (Full Text Search - By Name)",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{host}}/companies/0527a3a6-2cd3-4b43-8359-91783d061f1b/employees?query=more",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"companies",
+						"0527a3a6-2cd3-4b43-8359-91783d061f1b",
+						"employees"
+					],
+					"query": [
+						{
+							"key": "query",
+							"value": "more"
+						}
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Find Employess (Full Text Search - By Date)",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/companies/0527a3a6-2cd3-4b43-8359-91783d061f1b/employees?query=2020-03-16",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"companies",
+								"0527a3a6-2cd3-4b43-8359-91783d061f1b",
+								"employees"
+							],
+							"query": [
+								{
+									"key": "query",
+									"value": "2020-03-16"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Thu, 12 Aug 2021 18:23:29 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Server",
+							"value": "Kestrel"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "X-Current-Page",
+							"value": "1"
+						},
+						{
+							"key": "X-Total-Pages",
+							"value": "1"
+						},
+						{
+							"key": "X-Page-Size",
+							"value": "10"
+						},
+						{
+							"key": "X-Total-Records",
+							"value": "1"
+						}
+					],
+					"cookie": [],
+					"body": "[\n    {\n        \"id\": \"39932bdc-a73f-4fba-89b1-a68f647c1ea9\",\n        \"name\": \"Mc Donalds\",\n        \"createdAt\": \"2020-03-16\",\n        \"status\": \"Blocked\"\n    }\n]"
+				},
+				{
+					"name": "Find Employess (Full Text Search - By Status)",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/companies/0527a3a6-2cd3-4b43-8359-91783d061f1b/employees?query=tiago@email.com",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"companies",
+								"0527a3a6-2cd3-4b43-8359-91783d061f1b",
+								"employees"
+							],
+							"query": [
+								{
+									"key": "query",
+									"value": "tiago@email.com"
+								}
+							]
+						}
+					},
+					"_postman_previewlanguage": null,
+					"header": null,
+					"cookie": [],
+					"body": null
+				}
+			]
+		},
+		{
+			"name": "Find Employess (Order By Name)",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{host}}/companies/0527a3a6-2cd3-4b43-8359-91783d061f1b/employees?orderBy=name-asc",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"companies",
+						"0527a3a6-2cd3-4b43-8359-91783d061f1b",
+						"employees"
+					],
+					"query": [
+						{
+							"key": "orderBy",
+							"value": "name-asc"
+						}
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Find Employess (Order By Name Descending)",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/companies/0527a3a6-2cd3-4b43-8359-91783d061f1b/employees?orderBy=name-desc",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"companies",
+								"0527a3a6-2cd3-4b43-8359-91783d061f1b",
+								"employees"
+							],
+							"query": [
+								{
+									"key": "orderBy",
+									"value": "name-desc"
+								}
+							]
+						}
+					},
+					"_postman_previewlanguage": null,
+					"header": null,
+					"cookie": [],
+					"body": null
+				},
+				{
+					"name": "Find Employess (Order By HiredIn Ascending)",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/companies/0527a3a6-2cd3-4b43-8359-91783d061f1b/employees?orderBy=hiredIn-desc",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"companies",
+								"0527a3a6-2cd3-4b43-8359-91783d061f1b",
+								"employees"
+							],
+							"query": [
+								{
+									"key": "orderBy",
+									"value": "hiredIn-desc"
+								}
+							]
+						}
+					},
+					"_postman_previewlanguage": null,
+					"header": null,
+					"cookie": [],
+					"body": null
+				},
+				{
+					"name": "Find Employess (Order By HiredIn Descending)",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/companies/0527a3a6-2cd3-4b43-8359-91783d061f1b/employees?orderBy=hiredIn-asc",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"companies",
+								"0527a3a6-2cd3-4b43-8359-91783d061f1b",
+								"employees"
+							],
+							"query": [
+								{
+									"key": "orderBy",
+									"value": "hiredIn-asc"
+								}
+							]
+						}
+					},
+					"_postman_previewlanguage": null,
+					"header": null,
+					"cookie": [],
+					"body": null
+				}
+			]
+		},
+		{
+			"name": "Find Employess (Pagging)",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{host}}/companies/0527a3a6-2cd3-4b43-8359-91783d061f1b/employees?page=2",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"companies",
+						"0527a3a6-2cd3-4b43-8359-91783d061f1b",
+						"employees"
+					],
+					"query": [
+						{
+							"key": "page",
+							"value": "2"
+						}
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Find Employess (Paggging - PageSize)",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/companies/0527a3a6-2cd3-4b43-8359-91783d061f1b/employees?pageSize=3&page=2",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"companies",
+								"0527a3a6-2cd3-4b43-8359-91783d061f1b",
+								"employees"
+							],
+							"query": [
+								{
+									"key": "pageSize",
+									"value": "3"
+								},
+								{
+									"key": "page",
+									"value": "2"
+								}
+							]
+						}
+					},
+					"_postman_previewlanguage": null,
+					"header": null,
+					"cookie": [],
+					"body": null
+				}
+			]
+		},
+		{
+			"name": "Count Total of Employess in Company",
+			"request": {
+				"method": "HEAD",
+				"header": [],
+				"url": {
+					"raw": "{{host}}/companies/0527a3a6-2cd3-4b43-8359-91783d061f1b/employees",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"companies",
+						"0527a3a6-2cd3-4b43-8359-91783d061f1b",
+						"employees"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create Employee",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"Maria Aparecida\",\r\n    \"email\": \"maria@email.com\",\r\n    \"hiredIn\": \"2020-01-01\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{host}}/companies/0527a3a6-2cd3-4b43-8359-91783d061f1b/employees",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"companies",
+						"0527a3a6-2cd3-4b43-8359-91783d061f1b",
+						"employees"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create Employee (with Bad Request)",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"Maria Aparecida\",\r\n    \"email\": \"maria@email.com\",\r\n    \"hiredIn\": \"9999-99-99\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{host}}/companies/0527a3a6-2cd3-4b43-8359-91783d061f1b/employees",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"companies",
+						"0527a3a6-2cd3-4b43-8359-91783d061f1b",
+						"employees"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create Employee (with Validation Erros)",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"\",\r\n    \"createdAt\": \"2020-02-03\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{host}}/companies/0527a3a6-2cd3-4b43-8359-91783d061f1b/employees",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"companies",
+						"0527a3a6-2cd3-4b43-8359-91783d061f1b",
+						"employees"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create Employee (with Duplicated E-mail)",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"Dani Moreira\",\r\n    \"email\": \"dani@email.com\",\r\n    \"hiredIn\": \"2020-01-01\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{host}}/companies/0527a3a6-2cd3-4b43-8359-91783d061f1b/employees",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"companies",
+						"0527a3a6-2cd3-4b43-8359-91783d061f1b",
+						"employees"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Employee (Existing Employee)",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{host}}/companies/0527a3a6-2cd3-4b43-8359-91783d061f1b/employees/0aa264c2-c748-48e1-a642-f4a07135cbf5",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"companies",
+						"0527a3a6-2cd3-4b43-8359-91783d061f1b",
+						"employees",
+						"0aa264c2-c748-48e1-a642-f4a07135cbf5"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update Employee(Existing Company)",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"hiredIn\": \"2020-01-09\",\r\n    \"name\": \"Iran Silva (upd)\",\r\n    \"email\": \"iran_upd@email.com\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{host}}/companies/0527a3a6-2cd3-4b43-8359-91783d061f1b/employees/0aa264c2-c748-48e1-a642-f4a07135cbf5",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"companies",
+						"0527a3a6-2cd3-4b43-8359-91783d061f1b",
+						"employees",
+						"0aa264c2-c748-48e1-a642-f4a07135cbf5"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Remove Employee (Existing Company)",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"Updated Company\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{host}}/companies/0527a3a6-2cd3-4b43-8359-91783d061f1b/employees/4d7ac74a-e461-452f-a6bc-3771c8f9eeb0",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"companies",
+						"0527a3a6-2cd3-4b43-8359-91783d061f1b",
+						"employees",
+						"4d7ac74a-e461-452f-a6bc-3771c8f9eeb0"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

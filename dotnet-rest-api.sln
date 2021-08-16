@@ -10,7 +10,14 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "items", "items", "{878FB327
 		README.md = README.md
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sample.Rest.Api", "src\Sample.Rest.Api\Sample.Rest.Api.csproj", "{BA10E84A-9CDE-4F3C-AFB7-3ACEEC13F972}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Sample.Rest.Api", "src\Sample.Rest.Api\Sample.Rest.Api.csproj", "{BA10E84A-9CDE-4F3C-AFB7-3ACEEC13F972}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "postman", "postman", "{3C9F75AA-163A-4ED8-B156-8453221337A5}"
+	ProjectSection(SolutionItems) = preProject
+		items\postman\companies.postman_collection.json = items\postman\companies.postman_collection.json
+		items\postman\employees.postman_collection.json = items\postman\employees.postman_collection.json
+		items\postman\local.postman_environment.json = items\postman\local.postman_environment.json
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -40,6 +47,7 @@ Global
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{BA10E84A-9CDE-4F3C-AFB7-3ACEEC13F972} = {DE22CDF9-AF00-49E4-8E0C-2F6E2EE9789B}
+		{3C9F75AA-163A-4ED8-B156-8453221337A5} = {878FB327-E45F-4957-9DDE-7A355A0B265E}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {BD3A7D12-FBA5-453D-8436-07C9D0D48B4B}

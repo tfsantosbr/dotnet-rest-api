@@ -1,0 +1,766 @@
+{
+	"info": {
+		"_postman_id": "5450df3f-0bed-4d8a-bdf1-6303f464f1b4",
+		"name": "Companies",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Find Companies (All Companies)",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{host}}/companies",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"companies"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Find Companies (Filtered By Name)",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{host}}/companies?name=dis",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"companies"
+					],
+					"query": [
+						{
+							"key": "name",
+							"value": "dis"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Find Companies (Filtered By Creation Date)",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{host}}/companies?createdAt=2019-05-20",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"companies"
+					],
+					"query": [
+						{
+							"key": "createdAt",
+							"value": "2019-05-20"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Find Companies (Filtered By Status)",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{host}}/companies?status=active",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"companies"
+					],
+					"query": [
+						{
+							"key": "status",
+							"value": "active"
+						}
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Find Companies (Filtered By Status - Inactive)",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/companies?status=inactive",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"companies"
+							],
+							"query": [
+								{
+									"key": "status",
+									"value": "inactive"
+								}
+							]
+						}
+					},
+					"_postman_previewlanguage": null,
+					"header": null,
+					"cookie": [],
+					"body": null
+				},
+				{
+					"name": "Find Companies (Filtered By Status - Bloked)",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/companies?status=blocked",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"companies"
+							],
+							"query": [
+								{
+									"key": "status",
+									"value": "blocked"
+								}
+							]
+						}
+					},
+					"_postman_previewlanguage": null,
+					"header": null,
+					"cookie": [],
+					"body": null
+				}
+			]
+		},
+		{
+			"name": "Find Companies (Full Text Search - By Name)",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{host}}/companies?query=donalds",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"companies"
+					],
+					"query": [
+						{
+							"key": "query",
+							"value": "donalds"
+						}
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Find Companies (Full Text Search - By Date)",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/companies?query=2020-03-16",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"companies"
+							],
+							"query": [
+								{
+									"key": "query",
+									"value": "2020-03-16"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Thu, 12 Aug 2021 18:23:29 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Server",
+							"value": "Kestrel"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "X-Current-Page",
+							"value": "1"
+						},
+						{
+							"key": "X-Total-Pages",
+							"value": "1"
+						},
+						{
+							"key": "X-Page-Size",
+							"value": "10"
+						},
+						{
+							"key": "X-Total-Records",
+							"value": "1"
+						}
+					],
+					"cookie": [],
+					"body": "[\n    {\n        \"id\": \"39932bdc-a73f-4fba-89b1-a68f647c1ea9\",\n        \"name\": \"Mc Donalds\",\n        \"createdAt\": \"2020-03-16\",\n        \"status\": \"Blocked\"\n    }\n]"
+				},
+				{
+					"name": "Find Companies (Full Text Search - By Status)",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/companies?query=blocked",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"companies"
+							],
+							"query": [
+								{
+									"key": "query",
+									"value": "blocked"
+								}
+							]
+						}
+					},
+					"_postman_previewlanguage": null,
+					"header": null,
+					"cookie": [],
+					"body": null
+				}
+			]
+		},
+		{
+			"name": "Find Companies (Order By Name)",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{host}}/companies?orderBy=name-asc",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"companies"
+					],
+					"query": [
+						{
+							"key": "orderBy",
+							"value": "name-asc"
+						}
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Find Companies (Order By Name Descending)",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/companies?orderBy=name-desc",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"companies"
+							],
+							"query": [
+								{
+									"key": "orderBy",
+									"value": "name-desc"
+								}
+							]
+						}
+					},
+					"_postman_previewlanguage": null,
+					"header": null,
+					"cookie": [],
+					"body": null
+				},
+				{
+					"name": "Find Companies (Order By CreatedAt Ascending)",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/companies?orderBy=createdAt-asc",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"companies"
+							],
+							"query": [
+								{
+									"key": "orderBy",
+									"value": "createdAt-asc"
+								}
+							]
+						}
+					},
+					"_postman_previewlanguage": null,
+					"header": null,
+					"cookie": [],
+					"body": null
+				},
+				{
+					"name": "Find Companies (Order By CreatedAt Ascending) Copy",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/companies?orderBy=status-desc",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"companies"
+							],
+							"query": [
+								{
+									"key": "orderBy",
+									"value": "status-desc"
+								}
+							]
+						}
+					},
+					"_postman_previewlanguage": null,
+					"header": null,
+					"cookie": [],
+					"body": null
+				}
+			]
+		},
+		{
+			"name": "Find Companies (Pagging)",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{host}}/companies?page=2",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"companies"
+					],
+					"query": [
+						{
+							"key": "page",
+							"value": "2"
+						}
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Find Companies (Paggging - PageSize)",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/companies?pageSize=5&page=3",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"companies"
+							],
+							"query": [
+								{
+									"key": "pageSize",
+									"value": "5"
+								},
+								{
+									"key": "page",
+									"value": "3"
+								}
+							]
+						}
+					},
+					"_postman_previewlanguage": null,
+					"header": null,
+					"cookie": [],
+					"body": null
+				}
+			]
+		},
+		{
+			"name": "Check If Company Name Exists",
+			"request": {
+				"method": "HEAD",
+				"header": [],
+				"url": {
+					"raw": "{{host}}/companies?name=disney",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"companies"
+					],
+					"query": [
+						{
+							"key": "name",
+							"value": "disney"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Count Total Active Companies",
+			"request": {
+				"method": "HEAD",
+				"header": [],
+				"url": {
+					"raw": "{{host}}/companies?status=active",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"companies"
+					],
+					"query": [
+						{
+							"key": "status",
+							"value": "active"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create Company",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"Villa Country\",\r\n    \"createdAt\": \"2021-08-12\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{host}}/companies",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"companies"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create Company (with Bad Request)",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"\",\r\n    \"createdAt\": \"9999-99-99\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{host}}/companies",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"companies"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create Company (with Validation Erros)",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"\",\r\n    \"createdAt\": \"2020-02-03\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{host}}/companies",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"companies"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create Company (with Duplicated Name)",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"Mc Donalds\",\r\n    \"createdAt\": \"2020-02-03\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{host}}/companies",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"companies"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Company (Existing Company)",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{host}}/companies/0527a3a6-2cd3-4b43-8359-91783d061f1b",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"companies",
+						"0527a3a6-2cd3-4b43-8359-91783d061f1b"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Company (Non-Existing Company)",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{host}}/companies/0e011541-a1a0-4ee2-a1f0-509809406de6",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"companies",
+						"0e011541-a1a0-4ee2-a1f0-509809406de6"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update Company (Existing Company)",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"Updated Company\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{host}}/companies/ad3f11a9-6201-4135-b61b-ab8083cf32a9",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"companies",
+						"ad3f11a9-6201-4135-b61b-ab8083cf32a9"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update Company (Non-Existing Company)",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"Updated Company\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{host}}/companies/0e011541-a1a0-4ee2-a1f0-509809406de6",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"companies",
+						"0e011541-a1a0-4ee2-a1f0-509809406de6"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Active Company (Existing Company)",
+			"request": {
+				"method": "PATCH",
+				"header": [],
+				"url": {
+					"raw": "{{host}}/companies/a3000dd0-1eeb-41d3-abe2-89b05b80c8d4/activated",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"companies",
+						"a3000dd0-1eeb-41d3-abe2-89b05b80c8d4",
+						"activated"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Inactive Company (Existing Company)",
+			"request": {
+				"method": "PATCH",
+				"header": [],
+				"url": {
+					"raw": "{{host}}/companies/ad3f11a9-6201-4135-b61b-ab8083cf32a9/inactivated",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"companies",
+						"ad3f11a9-6201-4135-b61b-ab8083cf32a9",
+						"inactivated"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Block Company (Existing Company)",
+			"request": {
+				"method": "PATCH",
+				"header": [],
+				"url": {
+					"raw": "{{host}}/companies/ad3f11a9-6201-4135-b61b-ab8083cf32a9/blocked",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"companies",
+						"ad3f11a9-6201-4135-b61b-ab8083cf32a9",
+						"blocked"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Remove Company (Existing Company)",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"Updated Company\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{host}}/companies/ad3f11a9-6201-4135-b61b-ab8083cf32a9",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"companies",
+						"ad3f11a9-6201-4135-b61b-ab8083cf32a9"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Remove Company (Non-Existing Company)",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"Updated Company\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{host}}/companies/0e011541-a1a0-4ee2-a1f0-509809406de6",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"companies",
+						"0e011541-a1a0-4ee2-a1f0-509809406de6"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
