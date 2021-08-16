@@ -1,6 +1,6 @@
-﻿using Sample.Rest.Api.Domain;
+﻿using Sample.Rest.Api.Domain.Companies;
+using Sample.Rest.Api.Domain.Companies.Models;
 using Sample.Rest.Api.Extensions.Pagination;
-using Sample.Rest.Api.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;

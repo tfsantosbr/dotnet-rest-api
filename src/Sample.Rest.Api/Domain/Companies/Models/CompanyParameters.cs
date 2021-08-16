@@ -1,8 +1,7 @@
-﻿using Sample.Rest.Api.Domain;
-using Sample.Rest.Api.Extensions;
+﻿using Sample.Rest.Api.Extensions;
 using System;
 
-namespace Sample.Rest.Api.Models
+namespace Sample.Rest.Api.Domain.Companies.Models
 {
     public class CompanyParameters : Parameter
     {

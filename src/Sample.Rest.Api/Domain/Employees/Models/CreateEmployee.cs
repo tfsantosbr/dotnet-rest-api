@@ -1,11 +1,8 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 
-namespace Sample.Rest.Api.Models
+namespace Sample.Rest.Api.Domain.Employees.Models
 {
-    public class UpdateEmployee
+    public class CreateEmployee
     {
         public DateTime HiredIn { get; set; }
         public string Name { get; set; }

@@ -1,7 +1,8 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Sample.Rest.Api.Domain;
-using Sample.Rest.Api.Models;
+using Sample.Rest.Api.Domain.Employees;
+using Sample.Rest.Api.Domain.Employees.Models;
 using Sample.Rest.Api.Repositories;
 using System;
 

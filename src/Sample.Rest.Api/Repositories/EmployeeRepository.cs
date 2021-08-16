@@ -1,6 +1,6 @@
-﻿using Sample.Rest.Api.Domain;
+﻿using Sample.Rest.Api.Domain.Employees;
+using Sample.Rest.Api.Domain.Employees.Models;
 using Sample.Rest.Api.Extensions.Pagination;
-using Sample.Rest.Api.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -30,7 +30,6 @@ namespace Sample.Rest.Api.Repositories
                 .Select(p => new EmployeeItem
                 {
                     Id = p.Id,
-                    CompanyId = p.CompanyId,
                     Name = p.Name,
                     Email = p.Email,
                     HiredIn = $"{p.HiredIn:yyyy-MM-dd}",

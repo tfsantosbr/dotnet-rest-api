@@ -1,7 +1,7 @@
 ﻿using Sample.Rest.Api.Extensions;
 using System;
 
-namespace Sample.Rest.Api.Models
+namespace Sample.Rest.Api.Domain.Employees.Models
 {
     public class EmployeeParameters : Parameter
     {

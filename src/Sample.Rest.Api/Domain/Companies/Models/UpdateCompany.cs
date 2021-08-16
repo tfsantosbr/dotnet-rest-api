@@ -1,6 +1,4 @@
-﻿using System;
-
-namespace Sample.Rest.Api.Models
+﻿namespace Sample.Rest.Api.Domain.Companies.Models
 {
     public class UpdateCompany
     {

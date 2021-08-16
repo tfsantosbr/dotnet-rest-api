@@ -1,8 +1,8 @@
 ﻿using System;
 
-namespace Sample.Rest.Api.Models
+namespace Sample.Rest.Api.Domain.Employees.Models
 {
-    public class CreateEmployee
+    public class UpdateEmployee
     {
         public DateTime HiredIn { get; set; }
         public string Name { get; set; }

@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Sample.Rest.Api.Domain
+namespace Sample.Rest.Api.Domain.Employees
 {
     public class Employee
     {

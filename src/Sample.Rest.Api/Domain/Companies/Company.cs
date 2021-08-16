@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Sample.Rest.Api.Domain
+namespace Sample.Rest.Api.Domain.Companies
 {
     public class Company
     {
